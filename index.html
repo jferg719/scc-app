@@ -41,12 +41,18 @@
         <a href="#" class="btn ios-btn">Coming Soon to App Store</a>
     </div>
 
-    <script>
-        // Simple Device Detection
-        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-        if (isIOS) {
-            document.getElementById('ios-section').classList.remove('hidden');
-        }
-    </script>
+   <script>
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    const isAndroid = /Android/.test(navigator.userAgent);
+
+    if (isIOS) {
+        // Show Apple info, hide the Android button
+        document.getElementById('ios-section').classList.remove('hidden');
+        document.getElementById('android-section').classList.add('hidden');
+    } else if (isAndroid) {
+        // Just show the Android button (default state)
+        document.getElementById('android-section').classList.remove('hidden');
+    }
+</script>
 </body>
 </html>
