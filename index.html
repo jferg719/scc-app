@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sin City Confessions - Available Now</title>
+    <style>
+        body { font-family: 'Helvetica', sans-serif; text-align: center; background-color: #1a1a1a; color: white; padding: 50px 20px; }
+        .logo { width: 150px; margin-bottom: 20px; }
+        h1 { font-size: 2.5rem; margin-bottom: 10px; color: #ff3366; }
+        p { font-size: 1.2rem; color: #ccc; margin-bottom: 30px; }
+        .btn { display: inline-block; padding: 15px 30px; font-size: 1.1rem; color: white; text-decoration: none; border-radius: 50px; font-weight: bold; transition: 0.3s; }
+        .android-btn { background-color: #3DDC84; color: #000; }
+        .ios-btn { background-color: #555; cursor: not-allowed; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <img src="your-logo-url-here.png" alt="SCC Logo" class="logo">
+    <h1>Sin City Confessions</h1>
+    <p>The ultimate platform for anonymous truths. Are you ready to confess?</p>
+
+    <div id="android-section">
+        <a href="https://play.google.com/store/apps/details?id=com.dfheatlabs.sincityconfessions" class="btn android-btn">Get it on Google Play</a>
+    </div>
+
+    <div id="ios-section" class="hidden">
+        <p><strong>Apple users:</strong> We are currently in the final review with DF Heat Labs. Check back soon!</p>
+        <a href="#" class="btn ios-btn">Coming Soon to App Store</a>
+    </div>
+
+    <script>
+        // Simple Device Detection
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        if (isIOS) {
+            document.getElementById('ios-section').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
